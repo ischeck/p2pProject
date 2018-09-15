@@ -1,0 +1,44 @@
+// 顶部导航样式
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-inverse {
+  .navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-style: italic;
+
+    span {
+      font-size: 16px;
+      margin-right: 5px;
+    }
+  }
+
+  .navbar-nav {
+    & > li {
+      & > a {
+        color: #fff;
+
+        &:hover {
+          color: #00a8ff;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  line-height: 38px;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #efeeee;
+    color: #00a8ff;
+  }
+}
+//工具提示的图片大小
+
+.tooltip img {
+  width: 100px;
+}

@@ -55,7 +55,6 @@ gulp.task("uglifyJS",function () {
 gulp.task("default",function () {
     //开启监听服务器
     livereload.listen();
-    
     //语法：gulp.watch('观察的目标', ['执行的任务名称']);
     //监听less，sass，js并调用对应的任务
     gulp.watch("./src/less/*.less",["lessTask"]);

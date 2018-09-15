@@ -1,0 +1,63 @@
+// 引入页头样式
+@import "header.less"; // 顶部导航样式
+
+.mainNav-box .container .navbar-header {
+  .navbar-brand {
+    height: 70px;
+  }
+
+  span {
+    line-height: 70px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #337ab7;
+    margin-left: 5px;
+  }
+}
+// 注册表单样式
+
+.register_box {
+  margin-top: 10px;
+
+  form {
+    width: 35%;
+    margin: 30px auto;
+    .btn {
+      width: 120px;
+    }
+    .login_btn {
+      margin-left: 30px;
+    }
+  }
+}
+
+// 解决小屏表单错位
+@media all and (max-width:1200px) {
+  .register_box form {
+    width: 45%;
+    margin: 30px auto;
+  }
+}
+@media all and (max-width:991px) {
+  .register_box form {
+    width: 60%;
+    margin: 30px auto;
+    
+  }
+}
+@media all and (max-width:530px) {
+  .register_box form {
+    .btn {
+      width: 100%;
+    }
+    .login_btn {
+      display: inline-block;
+      padding-top: 20px;
+      width: 100%;
+      margin-left: 0px;
+      text-align: center;
+    }
+  }
+}
+// 引入页脚
+@import "footer.less";

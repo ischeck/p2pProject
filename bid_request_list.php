@@ -23,7 +23,25 @@
     require_once("./template/topNav.php");
     require_once("./template/mainNav.php");
     ?>
-    
+
+    <!-- 个人信息 -->
+    <div class="container personal_box">
+      <div class="row">
+        <div class="col-md-3">
+          <!-- 引入左边个人信息菜单 -->
+          <?php
+            require_once("./template/leftmenu.php");
+          ?>
+        </div>
+
+        <div class="col-md-9">
+        
+        </div>
+      </div>
+
+
+
+    </div>
     <!-- 引入页脚 -->
     <?php
       require_once("./template/footer.php");

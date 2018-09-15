@@ -1,0 +1,64 @@
+// 引入页头样式
+@import "header.less";
+// 引入左边个人信息菜单
+@import "accordionmenu.less";
+// 右边盒子
+.personal_box {
+  margin-top: 10px;
+  // 用户信息
+  .userinfo_box {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 16px;
+    .hpt_box {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    .user_box {
+      margin-left: 15px;
+      margin-top: 8px;
+    }
+  }
+
+  // 额度
+  .money_box {
+    font-size: 18px;
+    padding: 10px 10px;
+    text-align: center;
+  }
+
+  // 充值提现
+  .CashValue_box {
+    margin-top: 10px;
+  }
+
+  // 账户信息
+  .AccountInfo_box {
+     border-bottom: 1px solid #ddd;
+     padding: 0px 10px 16px 10px;
+    .font13 {
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    .col-sm-4 {
+      margin-top: 40px;
+    }
+    .leftimg {
+      margin-right: 10px;
+    }
+    h5 {
+      margin: 0px 0px 10px 0px;
+    }
+  }
+
+}
+// 响应式头像栏box居中
+@media all and (max-width:375px) {
+  .personal_box .userinfo_box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+// 引入页脚
+@import "footer.less";

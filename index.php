@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>p2p金融借贷平台</title>
+    <title>蓝润Eloan_首页</title>
     <!-- 引入bootstrap核心库 -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <!-- 引入编译和压缩后的css文件 -->
@@ -16,63 +16,14 @@
     <![endif]-->
 </head>
 <body>
-    <!-- 头部 -->
-    <!-- 顶部导航 -->
-    <nav class="navbar navbar-inverse">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-phone-alt"></span>028-86261949</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">首页</a></li>
-                <li><a href="#">小强</a></li>
-                <li><a href="#">赶快充值</a></li>
-                <li><a href="#">注销</a></li>
-                <li><a href="#">帮助</a></li>
-                <li><a href="#" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<img src='./images/contract.png'/>">联系客服</a></li>
-            </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-        </nav>
-        <!-- 主导航 -->
-        <nav class="navbar navbar-default">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                <img src="./images/logo.png" alt="网站logo"/>
-            </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
-                <li><a href="#">我要投资</a></li>
-                <li><a href="#">我要借款</a></li>
-                <li><a href="#">个人中心</a></li>
-                <li><a href="#">新手指引</a></li>
-                <li><a href="#">关于我们</a></li>
-            </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-        </nav>
+    <!-- 引入顶部导航 -->
+    <?php
+    require_once("./template/topNav.php")
+    ?>
+    <!-- 引入主导航 -->
+    <?php
+    require_once("./template/mainNav.php")
+    ?>
 
     <!-- 轮播图 -->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -109,16 +60,176 @@
     </div>
 
     <!-- 三大特色 -->
-    <section></section>
+    <div class="special_snack row container center-block">
+      <div class="col-sm-4 col-xs-12">
+        <dl class="feature_bg1">
+          <dt class="feature_title">高收益率</dt>
+          <dd class="feature_text">稳定投资、高收益、短期限，易融贷先行赔付，保障投资人权益。</dd>
+        </dl>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <dl class="feature_bg2">
+          <dt class="feature_title">行业第一</dt>
+          <dd class="feature_text">稳定投资、高收益、短期限，易融贷先行赔付，保障投资人权益。</dd>
+        </dl>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <dl class="feature_bg3">
+          <dt class="feature_title">投资理财</dt>
+          <dd class="feature_text">稳定投资、高收益、短期限，易融贷先行赔付，保障投资人权益。</dd>
+        </dl>
+      </div>
+    </div>
 
-    <!-- 投资信息 -->
-    <section></section>
+    <!-- 进行中的借款 -->
+    <div class="container">
+      <div class="panel panel-default underway">
+        <!-- 标题内容-->
+        <div class="panel-heading clearfix">
+          <span class="panel-title">进行中借款</span>
+          <a href="#" class="pull-right">进行中借款</a>
+        </div>
+        <!-- 表格 -->
+        <table class="table table-hover">
+          <thead>
+              <tr>
+              <th>借款人</th>
+              <th class="hideTitle">借款标题</th>
+              <th>年利率</th>
+              <th>金额</th>
+              <th class="hideTitle">还款方式</th>
+              <th>进度</th>
+              <th>操作</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+              <td>张三</td>
+              <td class="hideTitle">给我2000度过难关</td>
+              <td>10.00%</td>
+              <td>2,000.00</td>
+              <td class="hideTitle">按月分期还款</td>
+              <td>78.00%</td>
+              <td><button type="button" class="btn btn-danger btn-sm">查看</button></td>
+              </tr>
+              <tr>
+              <td>李四</td>
+              <td class="hideTitle">给我2000度过难关</td>
+              <td>10.00%</td>
+              <td>2,000.00</td>
+              <td class="hideTitle">按月分期还款</td>
+              <td>78.00%</td>
+              <td><button type="button" class="btn btn-danger btn-sm">查看</button></td>
+              </tr>
+              <tr>
+              <td>王五</td>
+              <td class="hideTitle">给我2000度过难关</td>
+              <td>10.00%</td>
+              <td>2,000.00</td>
+              <td class="hideTitle">按月分期还款</td>
+              <td>78.00%</td>
+              <td><button type="button" class="btn btn-danger btn-sm">查看</button></td>
+              </tr>
+              <tr>
+              <td>赵六</td>
+              <td class="hideTitle">给我2000度过难关</td>
+              <td>10.00%</td>
+              <td>2,000.00</td>
+              <td class="hideTitle">按月分期还款</td>
+              <td>78.00%</td>
+              <td><button type="button" class="btn btn-danger btn-sm">查看</button></td>
+              </tr>
+              <tr>
+              <td>李四</td>
+              <td class="hideTitle">给我2000度过难关</td>
+              <td>10.00%</td>
+              <td>2,000.00</td>
+              <td class="hideTitle">按月分期还款</td>
+              <td>78.00%</td>
+              <td><button type="button" class="btn btn-danger btn-sm">查看</button></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <!-- 新闻文章 -->
-    <section></section>
+    <div class="container News_articles">
+      <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="panel panel-default underway">
+              <!-- 标题内容-->
+              <div class="panel-heading clearfix">
+                  <span class="panel-title">企业最新资讯</span>
+                  <a href="#" class="pull-right">更多资讯</a>
+              </div>
+              <div class="panel-body">
+                  <ul>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                  </ul>
+              </div>
+              </div>
+          </div>
 
-    <!-- 页脚 -->
-    <footer></footer>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="panel panel-default underway">
+              <!-- 标题内容-->
+              <div class="panel-heading clearfix">
+                  <span class="panel-title">用户反馈</span>
+                  <a href="#" class="pull-right">更多资讯</a>
+              </div>
+              <div class="panel-body">
+                  <ul>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                  </ul>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="panel panel-default underway">
+              <!-- 标题内容-->
+              <div class="panel-heading clearfix">
+                  <span class="panel-title">理财经验</span>
+                  <a href="#" class="pull-right">更多资讯</a>
+              </div>
+              <div class="panel-body">
+                  <ul>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                  </ul>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="panel panel-default underway">
+              <!-- 标题内容-->
+              <div class="panel-heading clearfix">
+                  <span class="panel-title">活动分享</span>
+                  <a href="#" class="pull-right">更多资讯</a>
+              </div>
+              <div class="panel-body">
+                  <ul>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                      <li><a href="#">央视力挺互联网金融<span class="pull-right">发表日期：2015-03-23</span></a></li>
+                  </ul>
+              </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!--引入页脚 -->
+    <?php
+    require_once("./template/footer.php")
+    ?>
 
     <!-- 引入jquery -->
     <script src="./lib/jquery/jquery.min.js"></script>
