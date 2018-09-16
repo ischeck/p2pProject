@@ -55,13 +55,13 @@
           <div class="form-group">
               <label for="inputPassword3" class="col-sm-3 control-label">密码：</label>
               <div class="col-sm-9">
-              <input type="password" class="form-control" name="password" placeholder="请输入密码">
+              <input type="password" class="form-control" name="password" placeholder="请输入密码" autocomplete='tel'>
               </div>
           </div>
           <div class="form-group">
               <label for="inputPassword3" class="col-sm-3 control-label">确认密码：</label>
               <div class="col-sm-9">
-              <input type="password" class="form-control" name="repeatPassword" placeholder="请再次输入密码">
+              <input type="password" class="form-control" name="repeatPassword" placeholder="请再次输入密码" autocomplete='tel'>
               </div>
           </div>
           <div class="form-group">

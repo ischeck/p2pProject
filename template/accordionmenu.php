@@ -10,7 +10,7 @@
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         <li class="list-group-item"><a>马上有钱</a></li>
         <li class="list-group-item"><a>财运滚滚</a></li>
@@ -27,9 +27,9 @@
         </a>
       </h4>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
       <ul class="list-group">
-        <li class="list-group-item"><a href="#">借款项目</a></li>
+        <li class="list-group-item"><a href="./bid_request_list.php">借款项目</a></li>
         <li class="list-group-item"><a href="#">还款明细</a></li>
       </ul>
     </div>
@@ -43,10 +43,10 @@
         </a>
       </h4>
     </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
       <ul class="list-group">
-        <li class="list-group-item"><a href="#">账户信息</a></li>
-        <li class="list-group-item"><a href="#">实名认证</a></li>
+        <li class="list-group-item"><a href="./personal.php">账户信息</a></li>
+        <li class="list-group-item"><a href="./realauth.php">实名认证</a></li>
         <li class="list-group-item"><a href="#">银行卡管理</a></li>
         <li class="list-group-item"><a href="#">登陆记录</a></li>
       </ul>
@@ -61,10 +61,10 @@
         </a>
       </h4>
     </div>
-    <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+    <div id="collapsefour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingfour">
       <ul class="list-group">
-        <li class="list-group-item"><a href="#">账户流水</a></li>
-        <li class="list-group-item"><a href="#">充值明细</a></li>
+        <li class="list-group-item"><a href="./accountFlow_list.php">账户流水</a></li>
+        <li class="list-group-item"><a href="./recharge_list.php">充值明细</a></li>
         <li class="list-group-item"><a href="#">提现记录</a></li>
         <li class="list-group-item"><a href="#">收款明细</a></li>
       </ul>
@@ -79,12 +79,10 @@
         </a>
       </h4>
     </div>
-    <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
+    <div id="collapsefive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingfive">
       <ul class="list-group">
-        <li class="list-group-item"><a href="#">账户流水</a></li>
-        <li class="list-group-item"><a href="#">充值明细</a></li>
-        <li class="list-group-item"><a href="#">提现记录</a></li>
-        <li class="list-group-item"><a href="#">收款明细</a></li>
+        <li class="list-group-item"><a href="./userInfo.php">个人资料</a></li>
+
       </ul>
     </div>
   </div>

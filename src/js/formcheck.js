@@ -95,22 +95,39 @@ $(function() {
     }
   })
   .on('success.form.bv', function(e) {
-    // Prevent form submission
+    // 阻止表单的默认提交行为
     e.preventDefault();
-
-    // Get the form instance
+    // 获取表单实例
     var $form = $(e.target);
-
-    // Get the BootstrapValidator instance
+    // 获取验证实例
     var bv = $form.data('bootstrapValidator');
 
-    // Use Ajax to submit form data
-    $.post($form.attr('action'), $form.serialize(), function(result) {
-      console.log(result);
+    // 使用AJAX提交表单数据
+    /*
+      jquery发起ajax语法：$.post(url,data,success(data, textStatus, jqXHR),dataType)
+      参数说明
+       url   请求的地址
+       data  发送的数据，建议对象格式，也可以是字符串的拼接
+       success(data, textStatus, jqXHR)  成功的回调函数
+       dataType 返回的数据类型json
+
+       表单对象.serialize() 方法： 批量获取表单元素的值，拼接为字符串 a=1&b=2&c=3
+     */
+    const reqUrl="./api/userAdd.php"; //请求地址
+    const data=$form.serialize(); //表单数据
+    $.post(reqUrl, data, function(result) {
+        //根据后端的结果处理前端的业务逻辑
+        if(result.isSuccess){
+            alert(result.msg);
+            location.href="./login.php"; //跳转到登录页面
+        }
+        else{
+            alert(result.msg);
+        }
     }, 'json');
   });
 
-  //注册验证
+  //登陆验证
   $('#logForm').bootstrapValidator({
     message: 'This value is not valid', //全局的出错消息配
     feedbackIcons: {
@@ -156,18 +173,54 @@ $(function() {
 
     }
   }).on('success.form.bv', function(e) {
-    // Prevent form submission
+    // 阻止表单的默认提交行为
     e.preventDefault();
 
-    // Get the form instance
+    // 获取表单实例
     var $form = $(e.target);
 
-    // Get the BootstrapValidator instance
+    // 获取验证实例
     var bv = $form.data('bootstrapValidator');
+    // 使用AJAX提交表单数据
+    const reqUrl="./api/userCheck.php"; //请求地址
+    const data=$form.serialize(); //表单数据
+    $.post(reqUrl, data, function(result) {
+        //根据后端的结果处理前端的业务逻辑
+        if(result.isSuccess){
+            // 设置蒙层标题
+            $("#msgShowTitle").text("登陆成功");
+            // 设置蒙层内容
+            $(".glyphicon").addClass("glyphicon-ok-sign");
+            $(".modal-text").text(result.msg+",3秒后自动跳转到登陆页面");
+            $(".btn-default").text("立即进入");
 
-    // Use Ajax to submit form data
-    $.post($form.attr('action'), $form.serialize(), function(result) {
-      console.log(result);
+            //定时器修改等待数字
+            var num=3;
+            var timesID=setInterval(()=>{
+               num--;
+               $(".modal-text").text(result.msg+","+num+"秒后自动跳转到登陆页面");
+               if(num==0){
+                   clearInterval(timesID);
+                   location.href="./personal.php";//跳转到登录页面
+               }
+            },1000);
+            $('#msgShowModal').on('hidden.bs.modal', function (e) {
+              location.href="./personal.php";//跳转到登录页面
+              $(".glyphicon").removeClass("glyphicon-ok-sign");
+              })
+        }else{
+          // 设置蒙层标题
+          $("#msgShowTitle").text("登陆失败");
+          // 设置蒙层内容
+          $(".glyphicon").addClass("glyphicon-remove-sign");
+          $(".modal-text").text(result.msg);
+          $('#msgShowModal').on('hide.bs.modal', function (e) {
+            $('#logForm').bootstrapValidator('disableSubmitButtons', false);
+            $(".glyphicon").removeClass("glyphicon-remove-sign");
+            })
+        }
+        // 显示蒙层
+        $('#msgShowModal').modal('show')
     }, 'json');
   });
 });

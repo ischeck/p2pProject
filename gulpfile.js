@@ -10,6 +10,10 @@ var sass=require("gulp-sass");
 var uglify=require("gulp-uglify");
 var rename=require("gulp-rename");
 var cleanCss=require("gulp-clean-css");
+var gutil=require("gulp-util");
+
+//引入babel模块，编译es6
+var babel=require("gulp-babel");
 
 //引入热刷新模块
 var livereload=require("gulp-livereload");
@@ -43,10 +47,16 @@ gulp.task("sassTask",function () {
 //配置js压缩任务
 gulp.task("uglifyJS",function () {
     gulp.src('./src/js/*.js') //源文件
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(uglify()) //插件方法调用
         .pipe(rename(function (path) {
             path.basename += ".min"; //文件名： 原来的文件名+新增的文件
           })) //重命名
+        .on('error', function (err) {
+            gutil.log(gutil.colors.red('[Error]'), err.toString());
+        })
         .pipe(gulp.dest('./dist/js')) //输出目标
         .pipe(livereload()); //开启热刷新
 });
@@ -55,6 +65,7 @@ gulp.task("uglifyJS",function () {
 gulp.task("default",function () {
     //开启监听服务器
     livereload.listen();
+
     //语法：gulp.watch('观察的目标', ['执行的任务名称']);
     //监听less，sass，js并调用对应的任务
     gulp.watch("./src/less/*.less",["lessTask"]);

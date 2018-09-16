@@ -1,0 +1,81 @@
+// 引入页头样式
+@import "header.less"; // 引入左边个人信息菜单
+@import "accordionmenu.less";
+.main_box {
+  margin-top: 10px;
+}
+.main_box .panel-body .form-horizontal {
+  .mt7 {
+    margin-top: 7px;
+    margin-bottom: 0;
+  }
+  .a_look {
+    line-height: 160px;
+    margin-left: 50px;
+  }
+  .left_box {
+    margin-right: 10px!important;
+  }
+  .btn_box {
+    padding: 0px 50px;
+    #asubmit {
+      width: 200px;
+    }
+  }
+
+  .idCardItem {
+    width: 160px;
+    height: 150px;
+    float: left;
+    margin: 10px 0px 0px 0px;
+    border: 1px solid #e3e3e3;
+    text-align: center;
+
+    .a_box {
+      height: 30px;
+      line-height: 30px;
+    }
+    .img_box {
+      padding: 5px;
+      img {
+        width: 148px;
+        height: 108px;
+      }
+    }
+
+  }
+  @media all and (max-width:590px) {
+    .btn_box {
+      text-align: center;
+      #asubmit {
+        width: 80%;
+      }
+    }
+    .idCardItem {
+      width: 100%;
+      margin: 10px 0px 0px 0px;
+      height: 200px;
+      img {
+        width: 100%!important;
+        height: 158px!important;
+      }
+    }
+    .a_look {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      line-height: 40px!important;
+      margin-left: 0px!important;
+    }
+
+  }
+
+  @media all and (max-width:1024px) {
+    .a_look {
+      line-height: 160px;
+      margin-left: 50px;
+    }
+  }
+}
+// 引入页脚
+@import "footer.less";

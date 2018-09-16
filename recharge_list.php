@@ -10,7 +10,7 @@
     <!-- 引入bootstrapValidator的样式 -->
     <link rel="stylesheet" href="./lib/bootstrapValidator/css/bootstrapValidator.min.css">
     <!-- 引入编译和压缩后的css文件 -->
-    <link rel="stylesheet" href="./dist/css/minCss/register.min.css">
+    <link rel="stylesheet" href="./dist/css/minCss/bid_request_list.min.css">
     <!-- 兼容IE9以下的浏览器 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -24,6 +24,50 @@
     require_once("./template/mainNav.php");
     ?>
 
+    <!-- 个人信息 -->
+    <div class="container main_box">
+      <div class="row">
+        <div class="col-md-3">
+          <!-- 引入左边个人信息菜单 -->
+          <?php
+            require_once("./template/accordionmenu.php");
+          ?>
+        </div>
+
+        <div class="col-md-9">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="panel-title">充值明细</span>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>充值时间</th>
+                        <th>充值金额</th>
+                        <th>充值状态</th>
+                        <th>备注	</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2015-03-11 10:45:10</td>
+                        <td>500.00</td>
+                        <td>
+                            <p class="text-success">充值成功</p>
+                        </td>
+                        <td>
+                            线下充值500
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
     <!-- 引入页脚 -->
     <?php
       require_once("./template/footer.php");

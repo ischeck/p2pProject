@@ -37,34 +37,41 @@
         <div class="col-md-9">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <span class="panel-title">借款项目</span>
+              <span class="panel-title">账户流水</span>
             </div>
             <div class="panel-body">
               <table class="table table-hover">
                 <thead>
-                    <tr>
-                    <th>标题</th>
-                    <th>时间</th>
-                    <th>借款金额(元)</th>
-                    <th>期限</th>
-                    <th>利率</th>
-                    <th>状态</th>
-                    </tr>
+                <tr>
+                    <th>发生额(¥)</th>
+                    <th>账户余额(¥)</th>
+                    <th>可用余额</th>
+                    <th>冻结金额</th>
+                    <th>发生时间</th>
+                    <th>类型</th>
+                </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                    <td>
-                      <a target="_blank" href="borrow_info.html">江湖救急</a>
-                      <span class="label label-primary">信</span>
-                    </td>
-                    <td>2016-01-02</td>
-                    <td>2000</td>
-                    <td>12月</td>
-                    <td>12%</td>
-                    <td>待发布 招标中 满标未审核 还款中 招标拒绝</td>
-                    </tr>
-                </tbody>
-              </table>
+                  <tbody>
+                    <c:forEach var="data" items="${pageResult.datas}">
+                      <tr>
+                        <td>8.53</td>
+                        <td>2,451.43</td>
+                        <td>881.43</td>
+                        <td>1,570.00</td>
+                        <td>2017-05-20 16:02:34</td>
+                        <td>收款</td>
+                      </tr>
+                      <tr>
+          							<td class="text-info">-0.05</td>
+          							<td>2,442.90</td>
+          							<td>872.90</td>
+          							<td>1,570.00</td>
+          							<td>2017-05-31 06:02:21</td>
+          							<td>利息管理费</td>
+          						</tr>
+                    </c:forEach>
+                  </tbody>
+                </table>
             </div>
           </div>
         </div>

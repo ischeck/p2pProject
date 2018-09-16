@@ -1,0 +1,56 @@
+@brand-primary: #409EFF;
+@brand-success: #5cb85c;
+@brand-info:    #5bc0de;
+@brand-warning: #f0ad4e;
+@brand-danger:  #d9534f;
+@bg-success:    #dff0d8;
+// 弹出模态框样式
+.modal {
+  // 模态框
+  .modal-dialog {
+    width: 422px;
+    margin-top: 200px;
+  }
+  // 头部
+  .modal-header {
+    font-size: 18px;
+    padding: 15px 15px 10px;
+    border-bottom: none;
+  }
+  // 内容
+  .modal-body {
+    padding: 10px 15px;
+    .glyphicon-ok-sign {
+      color: @brand-success;
+    }
+    .glyphicon-remove-sign {
+      color: @brand-danger;
+    }
+    .glyphicon {
+      font-size: 24px;
+
+    }
+    .modal-text {
+      font-size: 14px;
+      color: #606266;
+      line-height: 24px;
+      margin-left: 5px;
+    }
+  }
+  // 底部
+  .modal-footer {
+    border: none;
+    padding: 5px 15px 10px 15px;
+    .btn {
+      width: 100px;
+      background-color: @brand-primary;
+      border: 1px solid @brand-primary;
+      color: #fff;
+      &:hover {
+        background: #66b1ff;
+        border-color: #66b1ff;
+        color: #fff;
+      }
+    }
+  }
+}

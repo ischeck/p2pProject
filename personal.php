@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="./lib/bootstrapValidator/css/bootstrapValidator.min.css">
     <!-- 引入编译和压缩后的css文件 -->
     <link rel="stylesheet" href="./dist/css/minCss/personal.min.css">
+    <!-- 引入jquery -->
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <!-- 验证用户身份是否合法 -->
+    <script src="./dist/js/userStateCheck.min.js"></script>
     <!-- 兼容IE9以下的浏览器 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -45,7 +49,7 @@
                 <!-- 内容 -->
                 <div class="pull-left user_box">
                   <p>昵 称：源代码教育</p>
-                  <p>用户名：小强</p>
+                  <p>用户名：<span id="username"></span></p>
                   <p>最后登录时间：2016-10-25 15:30:10</p>
                 </div>
               </div>
@@ -172,6 +176,28 @@
     <?php
       require_once("./template/footer.php");
     ?>
+    <!-- 模态框 -->
+    <div class="modal fade" id="msgShowModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="msgShowTitle">提示</h4>
+          </div>
+          <div class="modal-body clearfix" id="msgShowContent">
+            <div class="pull-left">
+              <span class="glyphicon " aria-hidden="true"></span>
+            </div>
+            <div class="pull-left">
+              <span class="modal-text"></span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- 引入jquery -->
     <script src="./lib/jquery/jquery.min.js"></script>
     <!-- 引入bootstrap核心库 -->
@@ -180,5 +206,19 @@
     <script src="./lib/bootstrapValidator/js/bootstrapValidator.min.js"></script>
     <!-- 引入自定义的效果 -->
     <script src="./dist/js/p2p.min.js"></script>
+
+    <script>
+      $.get("./api/checkState.php",function (data) {
+          //处理业务逻辑
+          if(data.isSuccess){
+              //成功显示数据
+              $("#username").text(data.username)
+          }
+          else{
+              //失败显示数据
+              $("#username").text("获取失败")
+          }
+      },"json");
+    </script>
 </body>
 </html>

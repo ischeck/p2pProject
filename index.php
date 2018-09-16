@@ -16,15 +16,11 @@
     <![endif]-->
 </head>
 <body>
-    <!-- 引入顶部导航 -->
+    <!-- 引入导航 -->
     <?php
-    require_once("./template/topNav.php")
+    require_once("./template/topNav.php");
+    require_once("./template/mainNav.php");
     ?>
-    <!-- 引入主导航 -->
-    <?php
-    require_once("./template/mainNav.php")
-    ?>
-
     <!-- 轮播图 -->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- 原点提示当前在那张图片 -->

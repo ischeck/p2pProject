@@ -28,7 +28,7 @@
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header clearfix">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="./index.php">
             <img src="./images/logo.png" alt="网站logo"/>
           </a>
           <span class="pull-left">用户登录</span>
@@ -55,13 +55,13 @@
           <div class="form-group">
               <label for="inputPassword3" class="col-sm-3 control-label">密码：</label>
               <div class="col-sm-9">
-              <input type="password" class="form-control" name="password" placeholder="请输入密码">
+              <input type="password" class="form-control" name="password" placeholder="请输入密码"  autocomplete='tel'>
               </div>
           </div>
           <div class="form-group">
               <div class="col-sm-offset-3 col-sm-9">
               <button type="submit" class="btn btn-primary">立即登录</button>
-              <a href="./login.php" class="login_btn">没有账号,立即注册</a>
+              <a href="./register.php" class="login_btn">没有账号,立即注册</a>
               </div>
           </div>
           </form>
@@ -72,6 +72,30 @@
     <?php
       require_once("./template/footer.php");
     ?>
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="msgShowModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="msgShowTitle">提示</h4>
+          </div>
+          <div class="modal-body clearfix" id="msgShowContent">
+            <div class="pull-left">
+              <span class="glyphicon " aria-hidden="true"></span>
+            </div>
+            <div class="pull-left">
+              <span class="modal-text"></span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">立即进入</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- 引入jquery -->
     <script src="./lib/jquery/jquery.min.js"></script>
     <!-- 引入bootstrap核心库 -->
