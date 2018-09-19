@@ -55,7 +55,7 @@
         if(data.isSuccess){
             //显示登录后菜单
             var htmlStr=`<li><a href="./personal.php">${data.username}</a></li>
-            <li><a href="#">赶快充值</a></li>
+            <li><a href="recharge.php?menuid=4">账户充值</a></li>
             <li><a class="logout" href="#">注销</a></li>`;
 
             // 父亲中插入儿子

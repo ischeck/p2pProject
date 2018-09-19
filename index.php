@@ -233,5 +233,7 @@
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <!-- 引入自定义的效果 -->
     <script src="./dist/js/p2p.min.js"></script>
+    <!-- 组件库 -->
+    <script src="./dist/js/module.min.js"></script>
 </body>
 </html>

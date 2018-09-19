@@ -25,12 +25,12 @@
         $_SESSION["userid"]=$rs["userid"];
 
         //json_encode() 把关联数组转换为json格式
-        $rsArray=["isSuccess"=>true,"msg"=>"欢迎您,登录成功!"];
+        $rsArray=["isSuccess"=>true,"msg"=>"登录成功!"];
         echo json_encode($rsArray);
 
     }
     else{
-        $rsArray=["isSuccess"=>false,"msg"=>"抱歉,登录失败,请检查登录名和密码!"];
+        $rsArray=["isSuccess"=>false,"msg"=>"登录失败,请检查登录名和密码!"];
         echo json_encode($rsArray);
     }
 

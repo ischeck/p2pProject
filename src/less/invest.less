@@ -1,0 +1,26 @@
+// 引入页头样式
+@import "header.less";
+// 引入左边个人信息菜单
+@import "accordionmenu.less";
+// 引入组件样式
+@import "module.less";
+// 自定义样式
+.box_center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media all and (max-width:414px) {
+  .table_user {display: none;}
+  .table_loantype {display: none;}
+  .table_schedule {display: none;}
+  // .table_user {display: none;}
+  // .table_user {display: none;}
+  .m-pagination {
+    height: 100%;
+  }
+
+}
+
+// 引入页脚
+@import "footer.less";

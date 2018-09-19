@@ -1,0 +1,101 @@
+// 引入页头样式
+@import "header.less";
+// 引入左边个人信息菜单
+@import "accordionmenu.less";
+// 引入组件样式
+@import "module.less";
+// 重置样式
+.text-info {color: #09d!important;}
+// 自定义样式
+.main_box {
+  margin-top: 10px;
+  .jiekuanren_box {
+    // 面板标题
+    .panel-heading {
+      .panel-title{
+        font-size: 14px;
+      }
+    }
+    // 面板内容
+    .panel-body {
+      // 头像img
+      img {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin: 0 auto;;
+      }
+    }
+  }
+  .jiekuanxiangqing_box {
+    h3 {margin-top: 0px;}
+    ul {
+      padding: 0px;
+      list-style: none;
+      li {
+        height: 36px;
+        span {
+          font-size: 16px;
+          color: #999;
+          &.text-info {
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
+  .jiekuanjindu_box {
+    ul {
+      padding: 0px;
+      list-style: none;
+      li {
+        height: 25px;
+        span {
+          font-size: 16px;
+          color: #999;
+          &.text-info {margin-left: 50px;}
+        }
+      }
+    }
+  }
+  .jiekuanrenxinxi_box {
+    .panel-body {
+      span {
+        font-size: 16px;
+        color: #999;
+        &.text-info {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .shenherenzhenxinxi_box {
+    .panel-title {font-size: 16px}
+    .panel-body {
+      span {
+        font-size: 16px;
+        color: #999;
+        &.text-info {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .cailiaoxinxi_box {
+    // color: #999;
+    font-size: 16px;
+  }
+  .huankuanqingkuang_box {
+    // color: #999;
+    font-size: 16px;
+  }
+  .toubiaoxinxi_box {
+    // color: #999;
+    font-size: 16px;
+  }
+}
+
+
+
+// 引入页脚
+@import "footer.less";

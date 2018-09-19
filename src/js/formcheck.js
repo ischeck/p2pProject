@@ -93,8 +93,7 @@ $(function() {
         }
       }
     }
-  })
-  .on('success.form.bv', function(e) {
+  }).on('success.form.bv', function(e) {
     // 阻止表单的默认提交行为
     e.preventDefault();
     // 获取表单实例
@@ -113,17 +112,45 @@ $(function() {
 
        表单对象.serialize() 方法： 批量获取表单元素的值，拼接为字符串 a=1&b=2&c=3
      */
-    const reqUrl="./api/userAdd.php"; //请求地址
-    const data=$form.serialize(); //表单数据
+    const reqUrl = "./api/userAdd.php"; //请求地址
+    const data = $form.serialize(); //表单数据
     $.post(reqUrl, data, function(result) {
-        //根据后端的结果处理前端的业务逻辑
-        if(result.isSuccess){
-            alert(result.msg);
-            location.href="./login.php"; //跳转到登录页面
-        }
-        else{
-            alert(result.msg);
-        }
+      //根据后端的结果处理前端的业务逻辑
+      if (result.isSuccess) {
+        // 设置蒙层标题
+        $("#msgShowTitle").text("注册成功");
+        // 设置蒙层内容
+        $(".glyphicon").addClass("glyphicon-ok-sign");
+        $(".modal-text").text(result.msg + ",3秒后自动跳转到登陆页面");
+        $(".btn-default").text("立即进入");
+
+        //定时器修改等待数字
+        var num = 3;
+        var timesID = setInterval(() => {
+          num--;
+          $(".modal-text").text(result.msg + "," + num + "秒后自动跳转到登陆页面");
+          if (num == 0) {
+            clearInterval(timesID);
+            location.href = "./login.php?menuid=1"; //跳转到登录页面
+          }
+        }, 1000);
+        $('#msgShowModal').on('hidden.bs.modal', function(e) {
+          location.href = "./login.php?menuid=1"; //跳转到登录页面
+          $(".glyphicon").removeClass("glyphicon-ok-sign");
+        })
+      } else {
+        // 设置蒙层标题
+        $("#msgShowTitle").text("注册失败");
+        // 设置蒙层内容
+        $(".glyphicon").addClass("glyphicon-remove-sign");
+        $(".modal-text").text(result.msg);
+        $('#msgShowModal').on('hide.bs.modal', function(e) {
+          $('#logForm').bootstrapValidator('disableSubmitButtons', false);
+          $(".glyphicon").removeClass("glyphicon-remove-sign");
+        })
+      }
+      // 显示蒙层
+      $('#msgShowModal').modal('show')
     }, 'json');
   });
 
@@ -182,45 +209,46 @@ $(function() {
     // 获取验证实例
     var bv = $form.data('bootstrapValidator');
     // 使用AJAX提交表单数据
-    const reqUrl="./api/userCheck.php"; //请求地址
-    const data=$form.serialize(); //表单数据
+    const reqUrl = "./api/userCheck.php"; //请求地址
+    const data = $form.serialize(); //表单数据
     $.post(reqUrl, data, function(result) {
-        //根据后端的结果处理前端的业务逻辑
-        if(result.isSuccess){
-            // 设置蒙层标题
-            $("#msgShowTitle").text("登陆成功");
-            // 设置蒙层内容
-            $(".glyphicon").addClass("glyphicon-ok-sign");
-            $(".modal-text").text(result.msg+",3秒后自动跳转到登陆页面");
-            $(".btn-default").text("立即进入");
+      //根据后端的结果处理前端的业务逻辑
+      if (result.isSuccess) {
+        // 设置蒙层标题
+        $("#msgShowTitle").text("登陆成功");
+        // 设置蒙层内容
+        $(".glyphicon").addClass("glyphicon-ok-sign");
+        $(".modal-text").text(result.msg + ",3秒后自动跳转到个人信息");
+        $(".btn-default").text("立即进入");
 
-            //定时器修改等待数字
-            var num=3;
-            var timesID=setInterval(()=>{
-               num--;
-               $(".modal-text").text(result.msg+","+num+"秒后自动跳转到登陆页面");
-               if(num==0){
-                   clearInterval(timesID);
-                   location.href="./personal.php";//跳转到登录页面
-               }
-            },1000);
-            $('#msgShowModal').on('hidden.bs.modal', function (e) {
-              location.href="./personal.php";//跳转到登录页面
-              $(".glyphicon").removeClass("glyphicon-ok-sign");
-              })
-        }else{
-          // 设置蒙层标题
-          $("#msgShowTitle").text("登陆失败");
-          // 设置蒙层内容
-          $(".glyphicon").addClass("glyphicon-remove-sign");
-          $(".modal-text").text(result.msg);
-          $('#msgShowModal').on('hide.bs.modal', function (e) {
-            $('#logForm').bootstrapValidator('disableSubmitButtons', false);
-            $(".glyphicon").removeClass("glyphicon-remove-sign");
-            })
-        }
-        // 显示蒙层
-        $('#msgShowModal').modal('show')
+        //定时器修改等待数字
+        var num = 3;
+        var timesID = setInterval(() => {
+          num--;
+          $(".modal-text").text(result.msg + "," + num + "秒后自动跳转到个人信息");
+          if (num == 0) {
+            clearInterval(timesID);
+            location.href = "./personal.php?menuid=4"; //跳转到登录页面
+          }
+        }, 1000);
+        $('#msgShowModal').on('hidden.bs.modal', function(e) {
+          location.href = "./personal.php?menuid=4"; //跳转到登录页面
+          $(".glyphicon").removeClass("glyphicon-ok-sign");
+        })
+      } else {
+        // 设置蒙层标题
+        $("#msgShowTitle").text("登陆失败");
+        // 设置蒙层内容
+        $(".glyphicon").addClass("glyphicon-remove-sign");
+        $(".modal-text").text(result.msg);
+        $('#msgShowModal').on('hide.bs.modal', function(e) {
+          $('#logForm').bootstrapValidator('disableSubmitButtons', false);
+          $(".glyphicon").removeClass("glyphicon-remove-sign");
+        })
+      }
+      // 显示蒙层
+      $('#msgShowModal').modal('show')
     }, 'json');
   });
+
 });

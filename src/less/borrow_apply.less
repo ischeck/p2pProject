@@ -1,0 +1,81 @@
+// 引入页头样式
+@import "header.less"; // 引入左边个人信息菜单
+@import "accordionmenu.less"; // 主体内容
+
+.main_box {
+	margin-top: 10px;
+	// 右边整体box
+	.right_box {
+		border: none;
+		// 顶部box
+		.panel-body {
+			padding: 0;
+
+			.money {
+				padding: 20px 0 20px 20px;
+				background-color: #F4F8FA;
+				border-left: 2px solid #0099DD;
+				margin-bottom: 20px;
+
+				h3 {
+					font-size: 24px;
+					color: #09d;
+				}
+			}
+
+			.BorrowMoneyInfo_box {
+				padding: 0 15px;
+				position: relative;
+
+				.btn_box {
+					// text-align: center;
+					.btn {
+						width: 100%;
+						margin: 0px;
+					}
+				}
+
+				.el-borrow-form-tip {
+					width: 300px;
+					border-radius: 3px;
+					border: 1px solid #ddd;
+					box-shadow: 1px 1px 20px #ddd;
+					padding: 20px 30px;
+					position: absolute;
+					top: 10px;
+					right: 100px;
+				}
+				@media all and (max-width:1200px) {
+					.el-borrow-form-tip {
+						width: 300px;
+						border-radius: 3px;
+						border: 1px solid #ddd;
+						box-shadow: 1px 1px 20px #ddd;
+						padding: 20px 30px;
+						position: absolute;
+						top: 10px;
+						right: 3%;
+					}
+				}
+				@media all and (max-width:767px) {
+					.input-group {
+						width: 100%;
+					}
+					.el-borrow-form-tip {
+						width: 100%;
+						border-radius: 3px;
+						border: 1px solid #ddd;
+						box-shadow: 1px 1px 20px #ddd;
+						padding: 20px 30px;
+						position:inherit;
+						margin: 0 auto;
+
+					}
+				}
+
+			}
+		}
+	}
+}
+// 引入页脚
+@import "footer.less";

@@ -1,0 +1,98 @@
+// 引入页头样式
+@import "header.less"; // 引入左边个人信息菜单
+@import "accordionmenu.less"; // 引入组件样式
+@import "module.less"; // 重置样式
+
+.text-info {
+  color: #09d!important;
+}
+// log标题
+
+.mainNav-box .container .navbar-header {
+  .navbar-brand {
+    height: 70px;
+  }
+
+  span {
+    line-height: 70px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #337ab7;
+    margin-left: 5px;
+  }
+}
+// 自定义样式
+
+.main_box {
+  margin-top: 5px;
+
+  .topmsg_box {
+    box-shadow: none;
+    border: none;
+
+    .panel-body {
+      .zhanghuchongzhi_box {
+        padding: 20px 0 20px 20px;
+        background-color: #F4F8FA;
+        border-left: 2px solid #0099DD;
+      }
+      padding: 0;
+    }
+  }
+
+  .chongzhi_box {
+    .tab-content {
+      border: 1px solid #ddd;
+      border-top: none;
+      padding: 0 20px;
+
+      #home {
+        p {
+          padding-top: 10px;
+          font-size: 24px;
+        }
+      }
+
+      #profile {
+        td {
+          line-height: 30px;
+        }
+
+        .btn_box {
+          .btn {
+            width: 200px;
+            margin: 0;
+          }
+        }
+
+        .el-bank {
+          display: block;
+          width: 150px;
+          height: 30px;
+          background: url("../../../images/bank_list.png") no-repeat;
+        }
+
+        .el-bank02 {
+          background-position: 0 -36px;
+        }
+
+        .el-bank03 {
+          background-position: 0 -108px;
+        }
+      }
+    }
+  }
+  @media all and (max-width:767px) {
+    #profile {
+      .btn_box {
+        text-align: center;
+
+        .btn {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+// 引入页脚
+@import "footer.less";

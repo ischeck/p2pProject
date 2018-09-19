@@ -82,5 +82,7 @@
     <script src="./dist/js/p2p.min.js"></script>
     <!-- 表单验证的js效果 -->
     <script src="./dist/js/formcheck.min.js"></script>
+    <!-- 组件库 -->
+    <script src="./dist/js/module.min.js"></script>
 </body>
 </html>

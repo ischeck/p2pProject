@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="./lib/bootstrapValidator/css/bootstrapValidator.min.css">
     <!-- 引入编译和压缩后的css文件 -->
     <link rel="stylesheet" href="./dist/css/minCss/bid_request_list.min.css">
+    <!-- 引入jquery -->
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <!-- 验证用户身份是否合法 -->
+    <script src="./dist/js/userStateCheck.min.js"></script>
     <!-- 兼容IE9以下的浏览器 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -43,26 +47,16 @@
               <table class="table table-hover">
                 <thead>
                     <tr>
-                    <th>标题</th>
-                    <th>时间</th>
-                    <th>借款金额(元)</th>
-                    <th>期限</th>
-                    <th>利率</th>
-                    <th>状态</th>
+                    <th class="table_title text-center">标题</th>
+                    <th class="table_time text-center">时间</th>
+                    <th class="table_money text-center">借款金额(元)</th>
+                    <th class="table_deadline text-center">期限</th>
+                    <th class="table_rate text-center">利率</th>
+                    <th class="table_state text-center">状态</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                    <td>
-                      <a target="_blank" href="borrow_info.html">江湖救急</a>
-                      <span class="label label-primary">信</span>
-                    </td>
-                    <td>2016-01-02</td>
-                    <td>2000</td>
-                    <td>12月</td>
-                    <td>12%</td>
-                    <td>待发布 招标中 满标未审核 还款中 招标拒绝</td>
-                    </tr>
+                <tbody id="borrowData">
+
                 </tbody>
               </table>
             </div>
@@ -77,13 +71,31 @@
     ?>
     <!-- 引入jquery -->
     <script src="./lib/jquery/jquery.min.js"></script>
+    <!-- 引入jqueryTemplate模板引擎的库文件 -->
+    <script src="./lib/jqueryTemplate/jquery.tmpl.js"></script>
     <!-- 引入bootstrap核心库 -->
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-    <!-- 引入bootstrapValidator的JS库 -->
-    <script src="./lib/bootstrapValidator/js/bootstrapValidator.min.js"></script>
     <!-- 引入自定义的效果 -->
     <script src="./dist/js/p2p.min.js"></script>
-    <!-- 表单验证的js效果 -->
-    <script src="./dist/js/formcheck.min.js"></script>
+    <!-- 组件库 -->
+    <script src="./dist/js/module.min.js"></script>
+    <!-- 定义模板： 用户渲染数据 -->
+    <script id="borrowTmpl" type="text/html">
+        <tr>
+            <td class="table_title text-center">
+              <a href="borrow_info.php?menuid=4">${borrowTitle}</a>
+              <span class="label label-primary">信</span>
+            </td>
+            <td class="table_time text-center">${submitDatetime}</td>
+            <td class="table_money text-center">${borrowAmount}</td>
+            <td class="table_deadline text-center">${monthes2Return}</td>
+            <td class="table_rate text-center">${currentRate}%</td>
+            <td class="table_state text-center">
+                <label class="text-muted">待发布</label>
+            </td>
+        </tr>
+    </script>
+    <!-- 借款信息的逻辑 -->
+    <script src="./dist/js/borrow.min.js"></script>
 </body>
 </html>

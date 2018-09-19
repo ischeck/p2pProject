@@ -1,0 +1,72 @@
+@brand-primary: #409EFF;
+@brand-success: #5cb85c;
+@brand-info: #5bc0de;
+@brand-warning: #f0ad4e;
+@brand-danger: #d9534f;
+@bg-success: #dff0d8; // 引入页头样式
+@import "header.less"; // 引入左边个人信息菜单
+@import "accordionmenu.less"; // 借款类型样式
+
+.BorrowMoney_box {
+  margin-top: 30px;
+  .panel {
+    background-color: #f9f9f9;
+  }
+  // 标题统一样式
+  .panel-heading {
+    font-weight: 300;
+    padding: 0 0 0 20px;
+    color: #FFFFFF;
+
+    span {
+      font-size: 24px;
+      line-height: 48px;
+    }
+  }
+  // 可借金额统一样式
+  .panel-body {
+    .money {
+      font-size: 16px;
+    }
+    // 资料统一样式
+    ul {
+      padding-left: 10px;
+
+      li {
+        list-style: none;
+        padding-left: 20px;
+        margin-top: 5px;
+        background: url("../../../images/sequare.png") left center no-repeat;
+      }
+    }
+  }
+  // 立即申请按钮
+  .el-borrow-apply {
+    border-radius: 20px;
+    background: #00a8ff;
+    color: #fff;
+    display: block;
+    margin: 0px auto;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      background: #008fd9;
+    }
+  }
+  .xinyongdai {
+    background-color: #40d47e;
+  }
+
+  .cheyidai {
+    background-color: #ec7e20;
+  }
+
+  .fangyidai {
+    background-color: #2ca2ee;
+  }
+}
+// 引入页脚
+@import "footer.less";

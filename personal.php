@@ -103,7 +103,7 @@
                   <div class="col-sm-4">
                     <!-- 手机认证 -->
                     <div>
-                      <div class="clearfix">
+                      <div class="clearfix padding_box1">
                         <!-- 图片 -->
                         <div class="leftimg pull-left">
                           <img src="images/shouji.jpg" alt="">
@@ -123,7 +123,7 @@
                   <div class="col-sm-4">
                     <!-- 邮箱认证 -->
                     <div>
-                      <div class="clearfix">
+                      <div class="clearfix padding_box2">
                         <!-- 图片 -->
                         <div class="leftimg pull-left">
                           <img src="images/youxiang.jpg" alt="">
@@ -145,7 +145,7 @@
                   <div class="col-sm-4">
                     <!-- VIP会员 -->
                     <div>
-                      <div class="clearfix">
+                      <div class="clearfix padding_box3">
                         <!-- 图片 -->
                         <div class="leftimg pull-left">
                           <img src="images/baozhan.jpg" alt="">
@@ -206,19 +206,7 @@
     <script src="./lib/bootstrapValidator/js/bootstrapValidator.min.js"></script>
     <!-- 引入自定义的效果 -->
     <script src="./dist/js/p2p.min.js"></script>
-
-    <script>
-      $.get("./api/checkState.php",function (data) {
-          //处理业务逻辑
-          if(data.isSuccess){
-              //成功显示数据
-              $("#username").text(data.username)
-          }
-          else{
-              //失败显示数据
-              $("#username").text("获取失败")
-          }
-      },"json");
-    </script>
+    <!-- 组件库 -->
+    <script src="./dist/js/module.min.js"></script>
 </body>
 </html>

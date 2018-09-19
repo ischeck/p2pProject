@@ -7,7 +7,7 @@
         echo json_encode($result);
    }
    else{
-        $result=["isSuccess"=>false,"msg"=>"登录失败!"];
+        $result=["isSuccess"=>false,"msg"=>"你没有登录,请登录后再使用!"];
         echo json_encode($result);
-   }  
+   }
 ?>

@@ -10,7 +10,7 @@
     <!-- 引入bootstrapValidator的样式 -->
     <link rel="stylesheet" href="./lib/bootstrapValidator/css/bootstrapValidator.min.css">
     <!-- 引入编译和压缩后的css文件 -->
-    <link rel="stylesheet" href="./dist/css/minCss/register.min.css">
+    <link rel="stylesheet" href="./dist/css/minCss/borrow.min.css">
     <!-- 兼容IE9以下的浏览器 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -23,7 +23,66 @@
     require_once("./template/topNav.php");
     require_once("./template/mainNav.php");
     ?>
+    <!-- 贷款分类 -->
+    <div class="container BorrowMoney_box">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading xinyongdai">
+              <span class="panel-title">信用贷</span>
+            </div>
+            <div class="panel-body">
+              <p class="money">可借金额 <i>¥ 2,000.00</i></p>
+    					<a href="#" class="text-primary">申请条件</a>
+    					<p class="help-block">仅限成都地区</p>
+    					<ul>
+    						<li>填写基本资料</li>
+    						<li>身份认证</li>
+    						<li>视频认证</li>
+    					</ul>
+    					<a href="borrow_apply.php?menuid=4?borrowtypeid=t1" class="el-borrow-apply">立刻申请</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading cheyidai">
+              <span class="panel-title">车易贷</span>
+            </div>
+            <div class="panel-body">
+              <p class="money">可借金额 <i>¥ 2,000.00</i></p>
+    					<a href="#" class="text-primary">申请条件</a>
+    					<p class="help-block">仅限成都地区</p>
+    					<ul>
+    						<li>填写基本资料</li>
+    						<li>身份认证</li>
+    						<li>视频认证</li>
+    					</ul>
+    					<a href="borrow_apply.php?menuid=4?borrowtypeid=t2" class="el-borrow-apply">立刻申请</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading fangyidai">
+              <span class="panel-title">房易贷</span>
+            </div>
+            <div class="panel-body">
+              <p class="money">可借金额 <i>¥ 12,000.00</i></p>
+    					<a href="#" class="text-primary">申请条件</a>
+    					<p class="help-block">仅限成都地区</p>
+    					<ul>
+    						<li>填写基本资料</li>
+    						<li>身份认证</li>
+    						<li>视频认证</li>
+    					</ul>
+    					<a href="borrow_apply.php?menuid=4?borrowtypeid=t3" class="el-borrow-apply">立刻申请</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
+    </div>
     <!-- 引入页脚 -->
     <?php
       require_once("./template/footer.php");
@@ -38,5 +97,7 @@
     <script src="./dist/js/p2p.min.js"></script>
     <!-- 表单验证的js效果 -->
     <script src="./dist/js/formcheck.min.js"></script>
+    <!-- 组件库 -->
+    <script src="./dist/js/module.min.js"></script>
 </body>
 </html>
