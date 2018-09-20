@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>蓝润Eloan_</title>
+    <title>蓝润Eloan_借款项目</title>
     <!-- 引入bootstrap核心库 -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <!-- 引入bootstrapValidator的样式 -->
@@ -97,5 +97,14 @@
     </script>
     <!-- 借款信息的逻辑 -->
     <script src="./dist/js/borrow.min.js"></script>
+    <script>
+      // 借款页面加载时自动发起ajax请求到后台的api获取当前登录用户的借款信息
+      $.get("./api/borrowList.php",function (result) {
+          var htmlStr = $("#borrowTmpl").tmpl(result);
+          //把渲染后的html更新到页面
+          $("#borrowData").html(htmlStr);
+          console.log(result);
+      },"json");
+    </script>
 </body>
 </html>

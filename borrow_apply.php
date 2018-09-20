@@ -36,7 +36,7 @@
             require_once("./template/accordionmenu.php");
           ?>
         </div>
-
+        
         <div class="col-md-9">
           <div class="panel panel-default right_box">
             <div class="panel-body">

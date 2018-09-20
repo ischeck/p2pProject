@@ -3,6 +3,7 @@ $(function (){
 $.get("./api/checkState.php",function (data) {
     //处理前端的业务逻辑
     if(!data.isSuccess){
+      console.log(data);
       // 模态框标题
       $("#msgShowTitle").text("温馨提示");
       // 模态框状态图标

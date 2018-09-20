@@ -45,15 +45,3 @@ $("#btnSubmit").on("click", function() {
     $('#msgShowModal').modal('show');
   }, "json");
 });
-
-
-$(function(){
-  //借款页面加载时自动发起ajax请求到后台的api获取当前登录用户的借款信息
-  if ($("#borrowTmpl").length>=1) {
-    $.get("./api/borrowList.php",function (result) {
-        var htmlStr = $("#borrowTmpl").tmpl(result);
-        //把渲染后的html更新到页面
-        $("#borrowData").html(htmlStr);
-    },"json");
-  };
-})

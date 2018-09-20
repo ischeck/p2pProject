@@ -1,13 +1,38 @@
 // 引入页头样式
-@import "header.less";
+@import "header.less"; // 引入左边个人信息菜单
+@import "accordionmenu.less"; // 引入组件样式
+@import "module.less";
 
 ul {
   list-style: none;
   padding: 0;
 }
 
+.box_center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media all and (max-width:414px) {
+  .table_user {
+    display: none;
+  }
 
+  .table_loantype {
+    display: none;
+  }
+
+  .table_schedule {
+    display: none;
+  }
+  // .table_user {display: none;}
+  // .table_user {display: none;}
+  .m-pagination {
+    height: 100%;
+  }
+}
 // 轮播图大小
+
 .carousel img {
   width: 100%;
   height: 100%;
@@ -28,6 +53,7 @@ ul {
 
 .special_snack {
   margin-top: 20px;
+
   dl {
     min-height: 65px;
   }
@@ -109,12 +135,6 @@ ul {
         color: #09d;
       }
     }
-  }
-}
-//解决小屏的版面错乱问题
-@media all and (max-width:520px) {
-  .hideTitle {
-    display: none;
   }
 }
 // 引入页脚

@@ -4,7 +4,7 @@
     $password=md5($_POST["password"]); //md5加密32位密码
     $mobile=$_POST["mobile"];
     $email=$_POST["email"];
-    
+
     //2. 链接数据库
     //语法：mysqli_connect('主机', '用户', '密码','数据库',端口)
     //$link=mysqli_connect("localhost","root","root","p2p",3306);
